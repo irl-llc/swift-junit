@@ -12,7 +12,7 @@ final class HandlersTests: XCTestCase {
     func testFileHandlerShouldGetResultPathFromEnvironment() {
         let resultPath = getTemporaryFilePath()
         XCTAssertFalse(FileManager.default.fileExists(atPath: resultPath))
-        setenv("SWIFT_JUNIT_RESULT_PATH", resultPath, 1)
+        setenv("XML_OUTPUT_FILE", resultPath, 1)
         fileHandler("test")
         XCTAssertTrue(FileManager.default.fileExists(atPath: resultPath))
     }
